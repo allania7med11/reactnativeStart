@@ -1,21 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from "react";
+import { Text, View } from 'react-native';
+import Carousel from "react-native-snap-carousel";
+class MyCarousel extends Component {
+  _renderItem = ({ item, index }) => {
+    return (
+      <View style={styles.slide}>
+        <Text style={styles.title}>{item.title}</Text>
+      </View>
+    );
+  };
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  render() {
+    return (
+      <Carousel
+        ref={(c) => {
+          this._carousel = c;
+        }}
+        data={this.state.entries}
+        renderItem={this._renderItem}
+        sliderWidth={sliderWidth}
+        itemWidth={itemWidth}
+      />
+    );
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default MyCarousel;
