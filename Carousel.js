@@ -19,7 +19,7 @@ const MAX_WIDTH = Dimensions.get('screen').width;
 const Carousel= ({images}) => {
   const animation = useRef(new Animated.Value(0));
   const [currentImage, setCurrentImage] = useState(0);
-  useInterval(() => handleAnimation(), 5000);
+  useInterval(() => handleAnimation(), 3000);
 
   const handleAnimation = () => {
     let newCurrentImage = currentImage + 1;
