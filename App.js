@@ -15,7 +15,7 @@ export default class App extends React.Component {
           activeIndex:0,
           carouselItems: [
           {
-              title:"Item 111",
+              title:"Item 112",
               text: "Text 111",
           },
           {
